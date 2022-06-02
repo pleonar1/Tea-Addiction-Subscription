@@ -1,5 +1,9 @@
 class Api::V1::SubscriptionsController < ApplicationController
 
+  def index
+    render json: SubscriptionSerializer.new(all_subscriptions)
+  end
+
   def create
     subscription = Subscription.new(subscription_params)
     if subscription.save
@@ -28,6 +32,10 @@ class Api::V1::SubscriptionsController < ApplicationController
 
     def valid_update_params?
       params[:status] == 1 || params[:status] == 'cancelled'
+    end
+
+    def all_subscriptions
+      Customer.find(params[:customer_id]).subscriptions
     end
 
 end
