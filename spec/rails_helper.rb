@@ -1,17 +1,12 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-
-require 'sidekiq/testing'
-Sidekiq::Testing.fake! # fake is the default mode
-
 # Using the 'inline' method will allow the test to actually hit the method and count towards SimpleCov
 # coverage, but I'm unsure of what it's doing behind the scenes.
 # Sidekiq::Testing.inline! # fake is the default mode
 
 require 'simplecov'
-SimpleCov.start do
-  add_filter "config/initializers/sidekiq.rb"
-end
+SimpleCov.start
+
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
