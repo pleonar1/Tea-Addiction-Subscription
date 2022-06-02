@@ -1,5 +1,9 @@
 class SubscriptionSerializer
 
+  include JSONAPI::Serializer
+
+  attributes :title, :price, :status, :frequency
+
   def self.show_new_subscription(subscription)
     {
       data: {
