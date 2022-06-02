@@ -11,10 +11,20 @@ RSpec.describe "create subscription", type: :request do
         customer_id: customer.id,
         tea_id: tea.id,
         title: tea.title,
-        price: 5.35,
+        price: 9.89,
         status: 'active',
         frequency: 'monthly'
-     }}.to_json
+                            }}.to_json
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      post "/api/v1/customers/#{customer.id}/subscriptions", headers: headers, params: subscription_params
+
+      expect(response).to be_successful
+      expect(response).to have_http_status(204)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      require "pry"; binding.pry
     end
   end
 end
