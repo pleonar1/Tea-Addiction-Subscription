@@ -12,7 +12,7 @@ class SubscriptionSerializer
           status: subscription.status,
           frequency: subscription.frequency,
           tea_id: subscription.tea.id,
-          customer: subscription.customer.id,
+          customer_id: subscription.customer.id,
         }
       }
     }.to_json
