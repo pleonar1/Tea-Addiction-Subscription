@@ -17,4 +17,15 @@ class SubscriptionSerializer
       }
     }.to_json
   end
+
+  def self.updated_status(subscription)
+    {
+      data: {
+        id: nil,
+        type: "subscription",
+        subscription_status: subscription.status,
+        subscription_id: subscription.id
+      }
+    }
+  end
 end
