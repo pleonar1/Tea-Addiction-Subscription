@@ -14,7 +14,9 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def update
+    require "pry"; binding.pry
     subscription = Subscription.find(params[:id])
+  #^this will error out so change it
     if valid_update_params?
       subscription.update_attribute(:status, 1)
       render json: SubscriptionSerializer.updated_status(subscription)
@@ -37,5 +39,4 @@ class Api::V1::SubscriptionsController < ApplicationController
     def all_subscriptions
       Customer.find(params[:customer_id]).subscriptions
     end
-
 end
