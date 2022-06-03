@@ -14,7 +14,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def update
-    require "pry"; binding.pry
     subscription = Subscription.find(params[:id])
   #^this will error out so change it
     if valid_update_params?
