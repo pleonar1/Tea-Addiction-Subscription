@@ -14,13 +14,14 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def update
-    subscription = Subscription.find(params[:id])
-  #^this will error out so change it
-    if valid_update_params?
-      subscription.update_attribute(:status, 1)
-      render json: SubscriptionSerializer.updated_status(subscription)
-    else
-      render json: {error: "Invalid credentials"}, status: 400
+    if params[:id]
+      subscription = Subscription.find(params[:id])
+      if valid_update_params?
+        subscription.update_attribute(:status, 1)
+        render json: SubscriptionSerializer.updated_status(subscription)
+      else
+        render json: {error: "Invalid credentials"}, status: 400
+      end
     end
   end
 
