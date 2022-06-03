@@ -48,8 +48,8 @@ Response:
     "type": "subscription",
     "attributes": {
         "id": 10,
-        "title": "forrest",
-        "price": 8,
+        "title": "blahblah",
+        "price": 400,
         "status": "cancelled",
         "frequency": "Monthly"
     }
@@ -59,8 +59,8 @@ Response:
     "type": "subscription",
     "attributes": {
         "id": 11,
-        "title": "mike wasowski",
-        "price": 11.11,
+        "title": "Mr Tea",
+        "price": 87.60,
         "status": "active",
         "frequency": "Annually"
     }
