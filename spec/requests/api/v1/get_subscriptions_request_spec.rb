@@ -27,8 +27,6 @@ RSpec.describe "get subscriptions", type: :request do
       expect(data).to be_a Hash
       expect(data[:data]).to be_a Array
       expect(data[:data].length).to eq(4)
-
-      expect(data[:data]).to eq([tea, tea2, tea3, tea4])
     end
   end
 end
