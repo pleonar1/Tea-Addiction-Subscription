@@ -8,6 +8,7 @@ This is a REST API for a tea subscription service to:
 
 ### Primary Technologies
 
+
   - Ruby 2.7.4
   - Rails 5.2.8
   - PostgreSQL
@@ -33,7 +34,7 @@ Testing is done with [RSpec](https://rspec.info/) with coverage details provided
 
 ### Database Design
 
-![Screen Shot 2022-06-01 at 6 28 09 PM](https://user-images.githubusercontent.com/79022527/171515264-fea0effd-094f-4346-a493-18dc6df70d60.png)
+![Screen Shot 2022-06-03 at 10 08 08 AM](https://user-images.githubusercontent.com/69911294/171870526-e1c176e4-e1f2-4472-b955-77a3f3ea1bd9.png)
 
 ### Endpoints
 
